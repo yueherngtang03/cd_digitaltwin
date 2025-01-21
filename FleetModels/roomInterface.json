@@ -1,0 +1,36 @@
+{
+    "@id": "dtmi:com:chhub:digitalroom:meetingroom:room;1",
+    "@type": "Interface",
+    "displayName": "Room - Interface Model",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "id",
+            "schema": "string",
+            "description": "roomid",
+            "writable": true
+        },
+        {
+            "@type": "Relationship",
+            "@id": "dtmi:com:chhub:digitalroom:meetingroom:room:room_has_hvac;1",
+            "name": "room_has_hvac",
+            "displayName": "Has HVAC",
+            "target": "dtmi:com:chhub:digitalroom:meetingroom:hvac_sys:hvac;1"
+        },
+        {
+            "@type": "Relationship",
+            "@id": "dtmi:com:chhub:digitalroom:meetingroom:room:room_has_light;1",
+            "name": "room_has_light",
+            "displayName": "Has Light",
+            "target": "dtmi:com:cdhub:digitalroom:meetingroom:lightings:light;1"
+        },
+        {
+            "@type": "Relationship",
+            "@id": "dtmi:com:chhub:digitalroom:meetingroom:room:room_has_outside;1",
+            "name": "room_has_outside",
+            "displayName": "Has Outside",
+            "target": "dtmi:com:chhub:digitalroom:meetingroom:outside;1"
+        }
+    ]
+}

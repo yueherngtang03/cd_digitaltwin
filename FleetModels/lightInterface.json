@@ -1,0 +1,37 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:com:cdhub:digitalroom:meetingroom:lightings:light;1",
+    "@type": "Interface",
+    "displayName": "Light Device - Interface Model",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "id",
+            "schema": "string",
+            "description": "LightId",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "lighton",
+            "schema": "boolean",
+            "description": "LightOn",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "lightpower",
+            "schema": "double",
+            "description": "Light Power Consumption",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "lightmaintenance",
+            "schema": "boolean",
+            "description": "Light is in need of maintenance",
+            "writable": true
+        }
+
+    ]
+}

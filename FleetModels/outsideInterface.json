@@ -1,0 +1,29 @@
+{
+    "@id": "dtmi:com:chhub:digitalroom:meetingroom:outside;1",
+    "@type": "Interface",
+    "displayName": "Outside - Interface Model",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "id",
+            "schema": "string",
+            "description": "OutsideTempSensorId",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "outsidetemperature",
+            "schema": "double",
+            "description": "OutsideTemperature",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "outsidehumidity",
+            "schema": "double",
+            "description": "OutsideHumidity",
+            "writable": true
+        }
+    ]
+}

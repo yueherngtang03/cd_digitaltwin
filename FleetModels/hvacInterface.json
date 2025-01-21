@@ -1,0 +1,50 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:com:chhub:digitalroom:meetingroom:hvac_sys:hvac;1",
+    "@type": "Interface",
+    "displayName": "HVAC Device - Interface Model",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "id",
+            "schema": "string",
+            "description": "HVACId",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "hvacairspeed",
+            "schema": "double",
+            "description": "HVAC Air Speed",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "hvactemperature",
+            "schema": "double",
+            "description": "HVAC Temperature",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "hvacidealtemperature",
+            "schema": "double",
+            "description": "HVAC Ideal Temperature",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "hvacpower",
+            "schema": "double",
+            "description": "HVAC Power Consumption",
+            "writable": true
+        },
+        {
+            "@type": "Property",
+            "name": "hvacmaintenance",
+            "schema": "boolean",
+            "description": "HVAC is in need of maintenance",
+            "writable": true
+        }
+    ]
+}
