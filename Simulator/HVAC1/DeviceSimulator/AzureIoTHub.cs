@@ -18,8 +18,7 @@ namespace DeviceSimulator
     {
         private static int taskDelay = 10 * 1000;
 
-        private static string modelPath1 = @"../../../Models/linear_1.onnx";
-        private static string modelPath2 = @"../../../Models/tree_1.onnx";
+        private static string modelPath1 = @"../../../Models/xgb_1.onnx";
         //#####################################################################
         //Replace Hub Name, hub Shared Access Key, and then the device shared access keys
         //  if you have different names for your devices, update those as well
