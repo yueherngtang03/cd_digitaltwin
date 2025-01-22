@@ -26,6 +26,8 @@ namespace DataIngestor
         private static readonly HttpClient httpClient = new HttpClient();
 
         [FunctionName("IoTHubToADTFunction")]
+
+        //  Processes events from IoT Hub (via Event Grid) and updates Azure Digital Twins (ADT) with the received telemetry data.
         public static async Task RunAsync([EventGridTrigger]EventGridEvent eventGridEvent, ILogger log)
         {
             log.LogInformation(eventGridEvent.Data.ToString());
@@ -90,28 +92,6 @@ namespace DataIngestor
 
                     await client.UpdateDigitalTwinAsync(deviceId, updateTwinData);
                 }
-                // {
-                //     log.LogInformation(eventGridEvent.Data.ToString());
-
-                //     // <Find_device_ID_and_temperature>
-                //     JObject deviceMessage = (JObject)JsonConvert.DeserializeObject(eventGridEvent.Data.ToString());
-                //     string deviceId = (string)deviceMessage["systemProperties"]["iothub-connection-device-id"];
-                //     var sensorData = deviceMessage["body"];
-                //     var lightpower = deviceMessage["body"]["lightpower"];
-                //     var lightmaintenance = deviceMessage["body"]["lightmaintenance"];
-
-                //     log.LogInformation($"Device:{deviceId}, Sensor Data: {sensorData}");
-
-                //     log.LogInformation($"Device:{deviceId} Power is:{lightpower}, Need Maintenance is: {lightmaintenance}");
-
-                //     // <Update_twin_with_device_temperature>
-                //     var updateTwinData = new JsonPatchDocument();
-                //     updateTwinData.AppendReplace("/lightpower", lightpower.Value<double>());
-                //     updateTwinData.AppendReplace("/lightmaintenance", lightmaintenance.Value<bool>());
-                //     await client.UpdateDigitalTwinAsync(deviceId, updateTwinData);
-
-                    
-                // }
             }
             catch (Exception ex)
             {

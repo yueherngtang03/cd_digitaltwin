@@ -22,21 +22,12 @@ namespace DeviceSimulator
 
         private static string device1Name = "Outside1";
         private static string device1SharedAccessKey = "TwSwWVTtVgQwXHgneInQvTU7dAjO4AEb7AIoTPdUi4g=";
-        // private static string device2Name = "trailer_sensor_22222201";
-        // private static string device2SharedAccessKey = "your-device-shared-access-key";
-        // private static string device3Name = "trailer_sensor_33333301";
-        // private static string device3SharedAccessKey = "your-device-shared-access-key";
 
         //these are composed from the above values
         private static string iotHubConnectionString = @$"HostName={hubName}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={hubSharedAccessKey}";
 
         private static string deviceConnectionString1 = $"HostName={hubName}.azure-devices.net;DeviceId={device1Name};SharedAccessKey={device1SharedAccessKey}";
-        // private static string deviceConnectionString2 = $"HostName={hubName}.azure-devices.net;DeviceId={device2Name};SharedAccessKey={device2SharedAccessKey}";
-        // private static string deviceConnectionString3 = $"HostName={hubName}.azure-devices.net;DeviceId={device3Name};SharedAccessKey={device3SharedAccessKey}";
-        
-        //#####################################################################
-        //Replace these for the correct device simulation
-        //#####################################################################
+
         private static string deviceConnectionString = deviceConnectionString1;
         private static string deviceId = device1Name;
 

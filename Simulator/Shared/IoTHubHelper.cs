@@ -11,6 +11,7 @@ namespace Shared
 {
     public static class IoTHubHelper
     {
+        // Listens for telemetry messages from an Azure IoT Hub Event Hub endpoint, filters messages from a specific device, and extracts a specific telemetry field's value.
         public static async Task<double> GetTelemetryFromDeviceAsync(
             string eventHubConnectionString,
             string targetDeviceId,
@@ -18,7 +19,6 @@ namespace Shared
             CancellationToken cancellationToken)
         {
             string consumerGroup = EventHubConsumerClient.DefaultConsumerGroupName;
-
             // Create Event Hub consumer client
             await using var consumerClient = new EventHubConsumerClient(consumerGroup, eventHubConnectionString);
 

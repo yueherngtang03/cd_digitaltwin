@@ -14,6 +14,8 @@ namespace DataIngestor
     public static class ADTToAzureTimeSeriesFunction
     {
         [FunctionName("ADTToAzureTimeSeriesFunction")]
+
+        // 
         public static async Task Run(
             [EventHubTrigger("ftc-adt-twins-hub", Connection = "EventHubAppSetting-Twins")] EventData myEventHubMessage,
             [EventHub("ftc-adt-time-series-hub", Connection = "EventHubAppSetting-TSI")] IAsyncCollector<string> outputEvents,

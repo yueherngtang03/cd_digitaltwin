@@ -30,17 +30,12 @@ namespace DeviceSimulator
         private static string device1SharedAccessKey = "dLywiA1GpmzVxw/fMB7jjfF9esHQ0Z7I4AIoTDEtBPo=";
 
          private static string targetDeviceId = "Outside1"; 
-        // private static string device2Name = "trailer_sensor_22222201";
-        // private static string device2SharedAccessKey = "your-device-shared-access-key";
-        // private static string device3Name = "trailer_sensor_33333301";
-        // private static string device3SharedAccessKey = "your-device-shared-access-key";
 
         //these are composed from the above values
         private static string iotHubConnectionString = @$"HostName={hubName}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={hubSharedAccessKey}";
 
         private static string deviceConnectionString1 = $"HostName={hubName}.azure-devices.net;DeviceId={device1Name};SharedAccessKey={device1SharedAccessKey}";
-        // private static string deviceConnectionString2 = $"HostName={hubName}.azure-devices.net;DeviceId={device2Name};SharedAccessKey={device2SharedAccessKey}";
-        // private static string deviceConnectionString3 = $"HostName={hubName}.azure-devices.net;DeviceId={device3Name};SharedAccessKey={device3SharedAccessKey}";
+
          private static string eventHubConnectionString = $"Endpoint=sb://ihsuprodsgres002dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=DEFLLFt4CAMMA8w0MlDL4Oe+rBG55JR2tAIoTHNssDw=;EntityPath=iothub-ehub-meetingroo-56987846-6f2ceff93f";
         //#####################################################################
         //Replace these for the correct device simulation
@@ -48,6 +43,7 @@ namespace DeviceSimulator
         private static string deviceConnectionString = deviceConnectionString1;
         private static string deviceId = device1Name;
 
+        // Creates or retrieves a device identity in Azure IoT Hub.
         public static async Task<string> CreateDeviceIdentityAsync(string deviceName)
         {
             var registryManager = RegistryManager.CreateFromConnectionString(iotHubConnectionString);
@@ -64,6 +60,7 @@ namespace DeviceSimulator
             return device.Authentication.SymmetricKey.PrimaryKey;
         }
 
+        // Simulates a device sending telemetry data to Azure IoT Hub.
         public static async Task SendDeviceToCloudMessageAsync(CancellationToken cancelToken)
         {
             var deviceClient = DeviceClient.CreateFromConnectionString(deviceConnectionString);
@@ -182,6 +179,7 @@ namespace DeviceSimulator
             }
         }
 
+        // Listens for messages sent from Azure IoT Hub to the device.
         public static async Task<string> ReceiveCloudToDeviceMessageAsync()
         {
             var oneSecond = TimeSpan.FromSeconds(1);
@@ -202,6 +200,7 @@ namespace DeviceSimulator
             }
         }
 
+        // Reads messages sent by devices to Azure IoT Hub through the Event Hub endpoint.
         public static async Task ReceiveMessagesFromDeviceAsync(CancellationToken cancelToken)
         {
             try
