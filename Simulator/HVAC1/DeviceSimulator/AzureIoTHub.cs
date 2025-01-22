@@ -33,7 +33,7 @@ namespace DeviceSimulator
 
         private static string deviceConnectionString1 = $"HostName={hubName}.azure-devices.net;DeviceId={device1Name};SharedAccessKey={device1SharedAccessKey}";
 
-         private static string eventHubConnectionString = $"Endpoint=sb://ihsuprodsgres002dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=DEFLLFt4CAMMA8w0MlDL4Oe+rBG55JR2tAIoTHNssDw=;EntityPath=iothub-ehub-meetingroo-56987846-6f2ceff93f";
+        private static string eventHubConnectionString = $"Endpoint=sb://ihsuprodsgres002dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=DEFLLFt4CAMMA8w0MlDL4Oe+rBG55JR2tAIoTHNssDw=;EntityPath=iothub-ehub-meetingroo-56987846-6f2ceff93f";
 
         private static string deviceConnectionString = deviceConnectionString1;
         private static string deviceId = device1Name;
