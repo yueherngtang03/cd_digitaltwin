@@ -13,30 +13,19 @@ namespace DeviceSimulator
     public static class AzureIoTHub
     {
         private static int taskDelay = 10 * 1000;
-        //#####################################################################
-        //Replace Hub Name, hub Shared Access Key, and then the device shared access keys
-        //  if you have different names for your devices, update those as well
-        //#####################################################################
+
         private static string hubName = "MeetingRoomIoTHub";
         private static string hubSharedAccessKey = "DEFLLFt4CAMMA8w0MlDL4Oe+rBG55JR2tAIoTHNssDw";
 
         private static string device1Name = "Light3";
         private static string device1SharedAccessKey = "9T5B+mRUevs60au+5VJ58Owrc9oG3ZyTVAIoTJT3mZc=";
-        // private static string device2Name = "trailer_sensor_22222201";
-        // private static string device2SharedAccessKey = "your-device-shared-access-key";
-        // private static string device3Name = "trailer_sensor_33333301";
-        // private static string device3SharedAccessKey = "your-device-shared-access-key";
+
 
         //these are composed from the above values
         private static string iotHubConnectionString = @$"HostName={hubName}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={hubSharedAccessKey}";
 
         private static string deviceConnectionString1 = $"HostName={hubName}.azure-devices.net;DeviceId={device1Name};SharedAccessKey={device1SharedAccessKey}";
-        // private static string deviceConnectionString2 = $"HostName={hubName}.azure-devices.net;DeviceId={device2Name};SharedAccessKey={device2SharedAccessKey}";
-        // private static string deviceConnectionString3 = $"HostName={hubName}.azure-devices.net;DeviceId={device3Name};SharedAccessKey={device3SharedAccessKey}";
-        
-        //#####################################################################
-        //Replace these for the correct device simulation
-        //#####################################################################
+
         private static string deviceConnectionString = deviceConnectionString1;
         private static string deviceId = device1Name;
 

@@ -19,10 +19,7 @@ namespace DeviceSimulator
         private static int taskDelay = 10 * 1000;
 
         private static string modelPath1 = @"../../../Models/xgb_1.onnx";
-        //#####################################################################
-        //Replace Hub Name, hub Shared Access Key, and then the device shared access keys
-        //  if you have different names for your devices, update those as well
-        //#####################################################################
+
         private static string hubName = "MeetingRoomIoTHub";
         private static string hubSharedAccessKey = "DEFLLFt4CAMMA8w0MlDL4Oe+rBG55JR2tAIoTHNssDw";
 
@@ -37,9 +34,7 @@ namespace DeviceSimulator
         private static string deviceConnectionString1 = $"HostName={hubName}.azure-devices.net;DeviceId={device1Name};SharedAccessKey={device1SharedAccessKey}";
 
          private static string eventHubConnectionString = $"Endpoint=sb://ihsuprodsgres002dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=DEFLLFt4CAMMA8w0MlDL4Oe+rBG55JR2tAIoTHNssDw=;EntityPath=iothub-ehub-meetingroo-56987846-6f2ceff93f";
-        //#####################################################################
-        //Replace these for the correct device simulation
-        //#####################################################################
+
         private static string deviceConnectionString = deviceConnectionString1;
         private static string deviceId = device1Name;
 

@@ -19,7 +19,7 @@ namespace Shared
             CancellationToken cancellationToken)
         {
             string consumerGroup = EventHubConsumerClient.DefaultConsumerGroupName;
-            // Create Event Hub consumer client
+        
             await using var consumerClient = new EventHubConsumerClient(consumerGroup, eventHubConnectionString);
 
             Console.WriteLine($"Listening for telemetry from device: {targetDeviceId} using consumer group '{consumerGroup}'...");
@@ -59,7 +59,7 @@ namespace Shared
                         {
                             Console.WriteLine($"Telemetry field '{telemetryField}' value: {telemetryValue}");
 
-                            // Attempt to parse as double
+                            
                             if (telemetryValue is JsonElement jsonElement && jsonElement.TryGetDouble(out double value))
                             {
                                 return value;
@@ -94,7 +94,6 @@ namespace Shared
                 }
             }
 
-            // If the loop ends, no matching telemetry was found
             throw new Exception($"No telemetry received from {targetDeviceId} for field '{telemetryField}'.");
         }
     }

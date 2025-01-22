@@ -13,17 +13,13 @@ namespace DeviceSimulator
     public static class AzureIoTHub
     {
         private static int taskDelay = 10 * 1000;
-        //#####################################################################
-        //Replace Hub Name, hub Shared Access Key, and then the device shared access keys
-        //  if you have different names for your devices, update those as well
-        //#####################################################################
+
         private static string hubName = "MeetingRoomIoTHub";
         private static string hubSharedAccessKey = "DEFLLFt4CAMMA8w0MlDL4Oe+rBG55JR2tAIoTHNssDw";
 
         private static string device1Name = "Outside1";
         private static string device1SharedAccessKey = "TwSwWVTtVgQwXHgneInQvTU7dAjO4AEb7AIoTPdUi4g=";
 
-        //these are composed from the above values
         private static string iotHubConnectionString = @$"HostName={hubName}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={hubSharedAccessKey}";
 
         private static string deviceConnectionString1 = $"HostName={hubName}.azure-devices.net;DeviceId={device1Name};SharedAccessKey={device1SharedAccessKey}";
